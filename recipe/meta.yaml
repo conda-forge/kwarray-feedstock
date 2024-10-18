@@ -1,5 +1,5 @@
 {% set name = "kwarray" %}
-{% set version = "0.7.0" %}
+{% set version = "0.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kwarray-{{ version }}.tar.gz
-  sha256: c7015c20330239ba48260ffab53713a8374b6ac2807e0a42f526c8577cd473f0
+  sha256: 80c76a27516a1f371d53c783938e1ebc19588167c8e31725939e6e43bb69cead
 
 build:
   noarch: python
