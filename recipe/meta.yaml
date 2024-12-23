@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kwarray-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/kwarray-{{ version }}.tar.gz
   sha256: 80c76a27516a1f371d53c783938e1ebc19588167c8e31725939e6e43bb69cead
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=41.0.1
   run:
     - numpy
     - packaging >=21.3
-    - python >=3.8
+    - python >={{ python_min }}
     - ubelt >=1.2.3
 
 test:
@@ -32,6 +32,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://gitlab.kitware.com/computer-vision/kwarray
