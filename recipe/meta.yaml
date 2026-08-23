@@ -1,17 +1,17 @@
 {% set name = "kwarray" %}
-{% set version = "0.7.1" %}
+{% set version = "0.7.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/kwarray-{{ version }}.tar.gz
-  sha256: 80c76a27516a1f371d53c783938e1ebc19588167c8e31725939e6e43bb69cead
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/kwarray-{{ version }}.tar.gz
+  sha256: 370c6830141a35114c899fa6f5ef2a3272ea704f679a83177b74c6d9fe8bf162
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
